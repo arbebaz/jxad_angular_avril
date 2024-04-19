@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+	<div class="container">
+
+		{% for notification in app.flashes('Success') %}
+			<div class="alert alert-success col-md-6 mx-auto text-center disparition">
+				{{ notification }}
+			</div>
+		{% endfor %}
+
+		<div>
+			<a class="btn btn-primary" href="{{ path('app_profil') }}">Retour</a>
+		</div>
+
+
+		<div class="example-wrapper text-center mb-3">
+			<h1>Hello
+				{{ controller_name }}
+				! 🎙️</h1>
+		</div>
+
+
+		{#### Form pour ajouter fichier ########}
+
+		<div class="inputForm">
+			{{form(formProfil)}}
+			</div>
+
+			
+		</div>
+
+
+		
+
+	{% endblock body %}

@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello LookupController!
+{% endblock %}
+
+{% block body %}
+
+<div class="container">
+
+		{# #########       Barre de recherche       ########### #}
+
+		<div class="container-fluid my-4">
+			<form class="d-flex m-auto" role="search" action="{{ path('app_lookup')}}">
+				<input class="form-control me-2" type="search" placeholder="Recherche.." aria-label="Search" name="search">
+				<button class="btn btn-dark" type="submit">Rechercher</button>
+			</form>
+		</div>
+
+
+	{% for item in produits %}
+		{% if item.IdCategorie.id == '1' %}
+
+			<div class="card" style="width: 25rem; height: 25rem">
+
+				<div class="card-body text-center">
+					<h5 class="card-title">{{item.titre}}</h5>
+
+					<p class="card-text fst-italic">Artiste :
+						{{item.description}}</p>
+					<p class="card-text">Format :
+						{{item.IdCategorie.nom}}</p>
+
+					<div>
+						<audio controls controlslist="nodownload" style="">
+							<source src="{{ asset('audio/' ~ item.fichier) }}" type="audio/mp3">
+							Votre navigateur ne supporte pas la lecture de ce fichier audio.
+						</audio>
+					</div>
+
+
+					<p class="card-text fw-bold">{{item.prix}}
+						euros.</p>
+					<div class="ms-3 mt-3">
+						<a id="btnPayer" href="{{ path('post_cart', { 'id': item.id }) }}" class="btn btn-dark">Ajouter au panier</a>
+					</div>
+				</div>
+			</div>
+		{% endif %}
+
+	{% endfor %}
+
+	</div>
+{% endblock %}

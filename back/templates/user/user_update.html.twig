@@ -1,0 +1,68 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+	<div class="container">
+
+		{% for notification in app.flashes('Success') %}
+			<div class="alert alert-success col-md-6 mx-auto text-center disparition">
+				{{ notification }}
+			</div>
+		{% endfor %}
+
+		<div>
+			<a class="btn btn-primary" href="{{ path('app_user') }}">Retour</a>
+		</div>
+
+
+		<div class="example-wrapper text-center mb-3">
+			<h1>Hello
+				{{ controller_name }}
+				! 🎙️</h1>
+		</div>
+
+
+		<h3 class="mb-3 text-center">Modifier les informations de l'utilisateur 🥷🏽 :</h3>
+
+		{#### Form pour ajouter fichier ########}
+
+
+		<div class="inputForm">
+			{{form(FormUser)}}
+			</div>
+		</div>
+
+
+		{# {{ form_start(FormUser)}}
+								<div class="d-flex flex-column justify-content-between">
+									<div class="row">
+										<div class="col-md-6">
+											<div class="col-md-12">
+												{{ form_row(FormUser.nom) }}
+											</div>
+											<div class="col-md-12">
+												{{ form_row(FormUser.prenom) }}
+											</div>
+											<div class="col-md-12">
+												{{ form_row(FormUser.email) }}
+											</div>
+											<div class="col-md-12">
+												{{ form_row(FormUser.adresse) }}
+											</div>
+										</div>
+										<div class="col-md-6">
+											<div class="col-md-12">
+												{{ form_row(FormUser.codePostal) }}
+											</div>
+											<div class="col-md-12">
+												{{ form_row(FormUser.telephone) }}
+											</div>
+										</div>
+									</div>
+									<div class="row">
+										<button class="btn bg-primary text-light col-md-12 my-3">Valider</button>
+									</div>
+								</div>
+								{{ form_end(FormUser)}} #}
+
+	{% endblock %}
