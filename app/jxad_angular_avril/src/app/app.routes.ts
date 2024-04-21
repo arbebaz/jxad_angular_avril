@@ -4,6 +4,10 @@ import { NotFoundComponent } from './pages/not_found/not-found/not-found.compone
 import { PremierComposantComponent } from './pages/specific/premier-composant/premier-composant.component';
 import { PageLiaisonUnidirectionnelleComponent } from './pages/specific/page-liaison-unidirectionnelle/page-liaison-unidirectionnelle.component';
 import { PageLiaisonBidirectionnelleComponent } from './pages/specific/page-liaison-bidirectionnelle/page-liaison-bidirectionnelle.component';
+import path from 'path';
+import { ParentComponent } from './components/parent/parent.component';
+import { EnfantComponent } from './components/enfant/enfant.component';
+import { PageLiaisonParentEnfantComponent } from './pages/specific/page-liaison-parent-enfant/page-liaison-parent-enfant.component';
 
 export const routes: Routes = [
   { path: '', component: AccueilComponent },
@@ -17,6 +21,8 @@ export const routes: Routes = [
     path: 'liaison-bidirectionnelle',
     component: PageLiaisonBidirectionnelleComponent,
   },
+
+  {path: 'liaison-parent-enfant', component: PageLiaisonParentEnfantComponent,}, 
 
   { path: 'premier-composant', component: PremierComposantComponent },
 
