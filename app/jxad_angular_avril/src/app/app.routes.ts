@@ -9,6 +9,7 @@ import { ParentComponent } from './components/parent/parent.component';
 import { EnfantComponent } from './components/enfant/enfant.component';
 import { PageLiaisonParentEnfantComponent } from './pages/specific/page-liaison-parent-enfant/page-liaison-parent-enfant.component';
 import { ComposantServiceComponent } from './components/composant-service/composant-service.component';
+import { PageListeEmployesComponent } from './pages/specific/page-liste-employes/page-liste-employes.component';
 
 export const routes: Routes = [
   { path: '', component: AccueilComponent },
@@ -28,6 +29,8 @@ export const routes: Routes = [
   { path: 'premier-composant', component: PremierComposantComponent },
 
   { path: 'page-service', component: ComposantServiceComponent },
+
+  { path: 'liste-employes', component: PageListeEmployesComponent}, 
 
   { path: '***', component: NotFoundComponent },
 ];
