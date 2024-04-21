@@ -8,6 +8,7 @@ import path from 'path';
 import { ParentComponent } from './components/parent/parent.component';
 import { EnfantComponent } from './components/enfant/enfant.component';
 import { PageLiaisonParentEnfantComponent } from './pages/specific/page-liaison-parent-enfant/page-liaison-parent-enfant.component';
+import { ComposantServiceComponent } from './components/composant-service/composant-service.component';
 
 export const routes: Routes = [
   { path: '', component: AccueilComponent },
@@ -22,9 +23,11 @@ export const routes: Routes = [
     component: PageLiaisonBidirectionnelleComponent,
   },
 
-  {path: 'liaison-parent-enfant', component: PageLiaisonParentEnfantComponent,}, 
+  { path: 'liaison-parent-enfant', component: PageLiaisonParentEnfantComponent }, 
 
   { path: 'premier-composant', component: PremierComposantComponent },
+
+  { path: 'page-service', component: ComposantServiceComponent },
 
   { path: '***', component: NotFoundComponent },
 ];
