@@ -10,6 +10,7 @@ import { EnfantComponent } from './components/enfant/enfant.component';
 import { PageLiaisonParentEnfantComponent } from './pages/specific/page-liaison-parent-enfant/page-liaison-parent-enfant.component';
 import { ComposantServiceComponent } from './components/composant-service/composant-service.component';
 import { PageListeEmployesComponent } from './pages/specific/page-liste-employes/page-liste-employes.component';
+import { EtudePipesComponent } from './components/etude-pipes/etude-pipes.component';
 
 export const routes: Routes = [
   { path: '', component: AccueilComponent },
@@ -31,6 +32,8 @@ export const routes: Routes = [
   { path: 'page-service', component: ComposantServiceComponent },
 
   { path: 'liste-employes', component: PageListeEmployesComponent}, 
+
+  { path: 'page-etude-pipes', component: EtudePipesComponent},
 
   { path: '***', component: NotFoundComponent },
 ];
