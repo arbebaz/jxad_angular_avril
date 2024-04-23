@@ -14,3 +14,4 @@ export class ContactComponent {
 
   public page:string = "Contact";
 }
+    
