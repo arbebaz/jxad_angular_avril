@@ -20,6 +20,6 @@ export class TopnavComponent {
 
   // En arrivant dans le template de Topnav la donnée contenue dans pageName qui provient du composant page va pouvoir 
   // etre utilisée pour selectionner une classe 'Active' de l'item de menu concerné par la page. 
-  
+   
 
 }
