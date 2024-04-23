@@ -13,6 +13,8 @@ import { PageListeEmployesComponent } from './pages/specific/page-liste-employes
 import { EtudePipesComponent } from './components/etude-pipes/etude-pipes.component';
 import { ContactComponent } from './pages/general/contact/contact.component';
 import { AboutComponent } from './pages/general/about/about.component';
+import { NavigationComponent } from './components/navigation/navigation.component';
+import { PageNavigationComponent } from './pages/specific/page-navigation/page-navigation.component';
 
 export const routes: Routes = [
   { path: '', component: AccueilComponent },
@@ -27,19 +29,24 @@ export const routes: Routes = [
     component: PageLiaisonBidirectionnelleComponent,
   },
 
-  { path: 'liaison-parent-enfant', component: PageLiaisonParentEnfantComponent }, 
+  {
+    path: 'liaison-parent-enfant',
+    component: PageLiaisonParentEnfantComponent,
+  },
 
   { path: 'premier-composant', component: PremierComposantComponent },
 
   { path: 'page-service', component: ComposantServiceComponent },
 
-  { path: 'liste-employes', component: PageListeEmployesComponent}, 
+  { path: 'liste-employes', component: PageListeEmployesComponent },
 
-  { path: 'page-etude-pipes', component: EtudePipesComponent},
+  { path: 'page-etude-pipes', component: EtudePipesComponent },
 
   { path: 'contact', component: ContactComponent },
 
   { path: 'about', component: AboutComponent },
+
+  { path: 'page-navigation', component: PageNavigationComponent },
 
   { path: '***', component: NotFoundComponent },
 ];
