@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ArtistesController!{% endblock %}
+
+{% block body %}
+	{# #########       ARTISTES       ########### #}
+
+
+	<div class="container">
+		<div class="parole flex-column p-4 my-5">
+			<div>
+				<h3 class="ms-4 my-2 text-center">Artistes 🦋:</h3>
+			</div>
+			<div class="d-flex flex-wrap justify-content-evenly mt-4">
+				<div class="col-md-4 mb-4 text-center">
+					<img class="imgArt" src="{{asset('images/PP/casque.JPG')}}" alt="" style="width:140px; height:140px">
+				</div>
+
+				<div class="col-md-4 mb-4 text-center">
+					<img class="imgArt" src="{{asset('images/PP/garcon.JPG')}}" alt="" style="width:140px; height:140px">
+				</div>
+
+				<div class="col-md-4 mb-4 text-center">
+					<img class="imgArt" src="{{asset('images/PP/me.JPG')}}" alt="" style="width:140px; height:140px">
+				</div>
+
+				<div class="col-md-4 mb-4 text-center">
+					<img class="imgArt" src="{{asset('images/PP/sunset.JPG')}}" alt="" style="width:140px; height:140px">
+				</div>
+
+				<div class="col-md-4 mb-4 text-center">
+					<img class="imgArt" src="{{asset('images/PP/smile.JPG')}}" alt="" style="width:140px; height:140px">
+				</div>
+
+				<div class="col-md-4 mb-4 text-center">
+					<img class="imgArt" src="{{asset('images/PP/sisters.JPG')}}" alt="" style="width:140px; height:140px">
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+{% endblock %}

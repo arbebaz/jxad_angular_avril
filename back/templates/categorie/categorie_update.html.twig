@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+	<div class="container">
+
+		{% for notification in app.flashes('Success') %}
+			<div class="alert alert-success col-md-6 mx-auto text-center disparition">
+				{{ notification }}
+			</div>
+		{% endfor %}
+
+		<div>
+			<a class="btn btn-primary" href="{{ path('app_categorie') }}">Retour</a>
+		</div>
+
+
+		<div class="example-wrapper text-center mb-3">
+			<h1>Hello
+				{{ controller_name }}
+				! 🫧</h1>
+		</div>
+
+
+		<h3 class="mb-3 text-center">Modifier la catégorie 🖋️ :</h3>
+
+		{#### Form pour update ########}
+
+
+		<div class="inputForm">
+			{{form(FormCategorie)}}
+			</div>
+		</div>
+
+
+	{% endblock %}

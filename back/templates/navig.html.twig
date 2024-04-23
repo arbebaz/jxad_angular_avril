@@ -1,0 +1,109 @@
+<nav
+	class="navjxad navbar-expand-lg bg-body-tertiary d-flex justify-content-around">
+
+	{# Logo / Redirection vers l'accueil #}
+	<div>
+		<a class="navbar-brand" href="{{ path('app_home')}}"><img src="{{ asset('images/LOGO/jxadSf.png') }}" alt="" style="width:100px"></a>
+	</div>
+
+
+	{# ADMIN #}
+
+
+	{% if app.user %}
+
+		<li class="nav-item">
+			<a class="nav-link active marge" aria-current="page" href="{{ path('app_contact')}}">Contact 🤳🏽</a>
+		</li>
+
+		{# {% if app.user.roles[0] == 'ROLE_ADMIN' %} #}
+		{% if is_granted('ROLE_ADMIN')  %}
+
+			<div>
+				<ul>
+					<li class="nav-item dropdown">
+						<a class="nav-link fw-bold marge" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+							ADMIN 🔐</a>
+
+						<ul class="dropdown-menu">
+							<li>
+								<a class="nav-link active text-center" aria-current="page" href="{{ path('app_produits') }}">ProduitsAdmin</a>
+							</li>
+							<li>
+								<a class="nav-link active text-center" aria-current="page" href="{{ path('app_categorie') }}">CategorieAdmin</a>
+							</li>
+							<li>
+								<a class="nav-link active text-center" aria-current="page" href="{{ path('app_user') }}">UserAdmin</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+
+		{% endif %}
+
+		<div>
+			<li>
+				<a class="nav-link active text-center fw-bold marge" aria-current="page" href="{{ path('get_cart')}}">Panier ⚡️</a>
+			</li>
+		</div>
+
+
+	{% endif %}
+
+	{# Menu du profil #}
+	<div>
+		<div class="float-end">
+
+			{% if app.user %}
+
+				<ul>
+					<li class="nav-item dropdown profil">
+						<a class="nav-link marge" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><img class="pp" src="{{ asset('images/PP/bad.JPG') }}" alt="" style="width:50px; height:50px"></a>
+						<span class="position-absolute top-0 start-100 translate-middle badge border border-light rounded-circle bg-info p-2">
+							<span class="visually-hidden">unread messages</span>
+						</span>
+						<ul class="dropdown-menu">
+
+							{# Condition connexion : ADMIN / USER #}
+
+
+							{# ADMIN #}
+							{# {% if app.user.roles[0] == 'ROLE_ADMIN' %}
+																																																																																																																											
+																																																																																			
+											<li class="nav-item">
+												<a class="nav-link active text-center" aria-current="page" href="{{ path('app_produits') }}">ProduitsAdmin</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link active text-center" aria-current="page" href="{{ path('app_categorie') }}">CategorieAdmin</a>
+											</li>
+					
+										{% endif %} #}
+
+							{# USER #}
+
+								<li class="nav-item"> <a class="nav-link active text-center" aria-current="page" href="{{ path('app_profil')}}">Profil</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link active text-center text-danger" aria-current="page" href="{{ path('app_logout') }}">Logout</a>
+							</li>
+
+
+						{% else %}
+
+							<div class="d-flex">
+								<li class="nav-item me-1">
+									<a class="nav-link active text-center text-info-emphasis marge" aria-current="page" href="{{ path('app_login') }}">Connexion |</a>
+								</li>
+								<li class="nav-item ms-1">
+									<a class="nav-link active text-center text-info-emphasis marge" href="{{ path('app_register') }}">Inscription</a>
+								</li>
+							</div>
+						{% endif %}
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+</div></nav>

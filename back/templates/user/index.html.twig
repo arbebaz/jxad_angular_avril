@@ -1,0 +1,65 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+
+	<div class="container">
+
+		{% for notification in app.flashes('Success') %}
+			<div class="alert alert-success col-md-6 mx-auto text-center disparition">
+				{{ notification }}
+			</div>
+		{% endfor %}
+
+		<div>
+			<a class="btn btn-dark" href="{{ path('app_home') }}">Retour</a>
+		</div>
+
+		<div class="example-wrapper text-center mb-4">
+			<h1>Hello
+				{{ controller_name }}
+				! 🥷🏽</h1>
+		</div>
+
+		<table class="table">
+			<thead>
+				<tr class="table-info">
+					<th scope="col">Nom</th>
+					<th scope="col">Prénom</th>
+					<th scope="col">Email</th>
+					<th scope="col">Adresse</th>
+					<th scope="col">Code postal</th>
+					<th scope="col">Téléphone</th>
+					{# <th scope="col">Photo</th> #}
+					<th scope="col">Actions</th>
+
+				</tr>
+			</thead>
+			<tbody>
+
+
+				{% for value in user %}
+					<tr>
+						<th scope="row">{{value.nom}}</th>
+						<td>{{value.prenom}}</td>
+						<td>{{value.email}}</td>
+						<td>{{value.adresse}}</td>
+						<td>{{value.codePostal}}</td>
+						<td>{{value.telephone}}</td>
+						{# <td>{{value.photo}}</td> #}
+						<td>
+							<div class="d-flex">
+								<a href="{{ path('user_details', {'id': value.id } ) }}"><img src="{{ asset('images/icones/loupe.png') }}" alt="" class="me-2" style="width:20px"></a>
+								{# <a href="{{ path('user_update', {'id': value.id } ) }}"><img src="{{ asset('images/icones/crayon.png') }}" alt="" class="me-2" style="width:20px"></a> #}
+								<a href="{{ path('user_delete', {'id': value.id } ) }}"><img src="{{ asset('images/icones/pb.png') }}" alt="" class="me-2" style="width:20px"></a>
+
+							</div>
+						</td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+
+	</div>
+
+{% endblock %}
