@@ -1,3 +1,7 @@
+<header>
+  <app-topnav [pageName]="page" />
+</header>
+
 <div class="bordure-marron">
   <p>etude-pipes works!</p>
 
@@ -126,14 +130,6 @@
   </ul>
   <h3 style="margin-top: 40px">- le pipe custom UCFIRSTPIPE</h3>
 
-  <p ngNonBindable>{{ 'une chaine en minuscule' | ucfirst }}</p>
-  <p>{{ 'une chaine en minuscule' | ucfirst }}</p>
-
-
-
-
-
-
-
-
+  <p ngNonBindable>{{ "une chaine en minuscule" | ucfirst }}</p>
+  <p>{{ "une chaine en minuscule" | ucfirst }}</p>
 </div>

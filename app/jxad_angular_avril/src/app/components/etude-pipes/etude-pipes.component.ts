@@ -12,6 +12,7 @@ import {
 } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { UcfirstPipe } from '../../pipes/ucfirst.pipe';
+import { TopnavComponent } from '../topnav/topnav.component';
 
 type AutreObjet = {
   p1: string;
@@ -38,11 +39,14 @@ interface MonObjet {
     PercentPipe,
     SlicePipe,
     UcfirstPipe,
+    TopnavComponent,
   ],
   templateUrl: './etude-pipes.component.html',
   styleUrl: './etude-pipes.component.css',
 })
 export class EtudePipesComponent implements OnInit {
+  public page: string = 'Études Pipes';
+  
   public aDate!: Date;
   public someObject!: MonObjet;
 

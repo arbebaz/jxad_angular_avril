@@ -4,12 +4,8 @@ import { EtudePipesComponent } from '../../../components/etude-pipes/etude-pipes
 @Component({
   selector: 'app-page-etude-pipes',
   standalone: true,
-  imports: [
-    EtudePipesComponent
-  ],
+  imports: [EtudePipesComponent],
   templateUrl: './page-etude-pipes.component.html',
-  styleUrl: './page-etude-pipes.component.css'
+  styleUrl: './page-etude-pipes.component.css',
 })
-export class PageEtudePipesComponent {
-
-}
+export class PageEtudePipesComponent {}

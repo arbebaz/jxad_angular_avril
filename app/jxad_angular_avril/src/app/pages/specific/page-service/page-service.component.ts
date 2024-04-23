@@ -4,12 +4,8 @@ import { ComposantServiceComponent } from '../../../components/composant-service
 @Component({
   selector: 'app-page-service',
   standalone: true,
-  imports: [
-    ComposantServiceComponent
-  ],
+  imports: [ComposantServiceComponent],
   templateUrl: './page-service.component.html',
-  styleUrl: './page-service.component.css'
+  styleUrl: './page-service.component.css',
 })
-export class PageServiceComponent {
-
-}
+export class PageServiceComponent {}
