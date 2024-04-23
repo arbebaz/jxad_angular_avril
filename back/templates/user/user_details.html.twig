@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+	<div class="container">
+
+		{% for notification in app.flashes('Success') %}
+			<div class="alert alert-success col-md-6 mx-auto text-center disparition">
+				{{ notification }}
+			</div>
+		{% endfor %}
+
+		<a href="{{ path('app_user') }}" class="btn btn-dark mt-3">Retour</a>
+
+		<div class="example-wrapper text-center mb-3">
+			<h1>Hello
+				{{ controller_name }}
+				! 🥷🏽</h1>
+		</div>
+
+		<div class="card text-center" style="width: 30rem;">
+			<div class="card-header">
+				<p class="card-text">NOM :
+					{{user.nom}}</p>
+				<p class="card-text">PRÉNOM :
+					{{user.prenom}}</p>
+			</div>
+
+			<div class="card-body">
+				<p class="card-title">ID BDD :
+					{{user.id}}</p>
+
+				<p class="card-text">EMAIL :
+					{{user.email}}</p>
+				<p class="card-text">ADRESSE :
+					{{user.adresse}}</p>
+				<p class="card-text">CODE POSTAL :
+					{{user.codePostal}}</p>
+				<p class="card-text">TÉLÉPHONE :
+					{{user.telephone}}</p>
+			</div>
+
+		</div>
+	</div>
+
+{% endblock %}

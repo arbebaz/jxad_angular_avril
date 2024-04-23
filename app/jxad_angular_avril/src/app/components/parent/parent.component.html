@@ -1,0 +1,10 @@
+<div class="bordure-rose">
+  <p>parent works!</p>
+  <p>
+    Vous avez cliqué sur <strong>{{ dataRecuDeEnfant }}</strong>
+  </p>
+  <app-enfant
+    [dataRecuDuParent]="data"
+    (renvoiVersParentEvt)="recupereLigneClick($event)"
+  />
+</div>
