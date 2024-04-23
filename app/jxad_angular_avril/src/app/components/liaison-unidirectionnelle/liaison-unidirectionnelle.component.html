@@ -1,0 +1,25 @@
+<div class="bordure-bleue">
+  <p>liaison-unidirectionnelle works!</p>
+
+  <!--
+utilisation de la donnée texte dans un controle par 
+interpolation à l'intérieur d'un attribut
+-->
+  <p>
+    <input type="text" name="monTexte" id="monTexte" value="{{ texte }}" />
+  </p>
+
+  <!--
+utilisation de la donnée texte dans un controle par 
+la technique de liaison d'attribut
+-->
+  <p>
+    <input type="text" name="monTexte" id="monTexte" [value]="texte" />
+  </p>
+
+  <!--
+utilisation de la donnée texte dans TexteNode par la méthode 
+de l'interpolation 
+-->
+  <p>La valeur de la propriété texte de la classe est: {{ texte }}</p>
+</div>

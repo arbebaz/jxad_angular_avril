@@ -1,0 +1,10 @@
+<div class="bordure-orange">
+  <p>liaison-bidirectionnelle works!</p>
+  <h5>Communication unidirectionnelle, 35 -> Template :</h5>
+  <input type="text" [value]="text1" style="width: 300px" />
+  <p>La valeur de la propriété text de la classe est : {{ text1 }}</p>
+
+  <h5>Communication bidirectionnelle, 35 -> Template -> JS :</h5>
+  <input type="text" [(ngModel)]="text2" [value]="text2" style="width: 300px" />
+  <p>La valeur de la propriété text2 de la classe est : {{ text2 }}</p>
+</div>

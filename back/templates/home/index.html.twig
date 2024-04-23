@@ -1,0 +1,220 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello HomeController!
+{% endblock %}
+
+{% block body %}
+
+
+	<div
+		class="container">
+
+		{# #########       Barre de recherche       ########### #}
+
+		<div class="container-fluid">
+			<form class="d-flex m-auto" role="search" action="{{ path('app_lookup')}}">
+				<input class="form-control me-2" type="search" placeholder="Recherche.." aria-label="Search" name="search">
+				<button class="btn btn-dark" type="submit">Rechercher</button>
+			</form>
+		</div>
+
+
+		{% if app.user %}
+			<div class="text-dark text-center mt-5 mb-4">
+				<h3 class="text-center">
+					Hello,
+					{{ app.user.prenom }}
+					!
+					<br>
+					Bienvenue sur JXAD Musique 🎙️
+				</h3>
+
+				{# #########       LOGO       ########### #}
+
+				<img class="d-flex m-auto" src="{{ asset('images/LOGO/JxadSf.png')}}" alt="" style="width:300px; height:300px">
+
+			{% else %}
+				<img class="d-flex m-auto" src="{{ asset('images/LOGO/JxadSf.png')}}" alt="" style="width:300px; height:300px">
+
+
+			{% endif %}
+
+			{# #########       MENU        ########### #}
+
+			<div
+				class="d-flex justify-content-around my-4">
+				{# {% for value in categorie %}
+																	<li class="border-bottom">
+																		<a class="menuC fs-5 text-dark" href="{{ path('categorie_produits', {'id': value.id}) }}">{{ value.nom }}</a>
+																	</li>
+																{% endfor %} #}
+
+				<li class="border-bottom">
+					<a class="menuC fs-5 text-dark" href="{{ path('app_musique') }}">Chanson</a>
+				</li>
+				<li class="border-bottom">
+					<a class="menuC fs-5 text-dark" href="{{ path('app_parole') }}">Parole</a>
+				</li>
+				<li class="border-bottom">
+					<a class="menuC fs-5 text-dark" href="{{ path('app_videos') }}">Video</a>
+				</li>
+				<li class="border-bottom">
+					<a class="menuC fs-5 text-dark" href="{{ path('app_instrumental') }}">Instrumentals</a>
+				</li>
+				<li class="border-bottom">
+					<a class="menuC fs-5 text-dark" href="{{ path('app_artistes') }}">Artistes</a>
+				</li>
+
+			</div>
+
+
+			{# #########       ARTISTES       ########### #}
+
+			<div class="parole flex-column p-4 my-5">
+				<div>
+					<h3 class="ms-4 my-2 text-center">Artistes 🦋:</h3>
+				</div>
+				<div class="d-flex flex-wrap justify-content-evenly mt-4">
+					<div class="col-md-4 mb-4 text-center">
+						<img class="imgArt" src="{{asset('images/PP/casque.JPG')}}" alt="" style="width:140px; height:140px">
+					</div>
+
+					<div class="col-md-4 mb-4 text-center">
+						<img class="imgArt" src="{{asset('images/PP/garcon.JPG')}}" alt="" style="width:140px; height:140px">
+					</div>
+
+					<div class="col-md-4 mb-4 text-center">
+						<img class="imgArt" src="{{asset('images/PP/me.JPG')}}" alt="" style="width:140px; height:140px">
+					</div>
+
+					<div class="col-md-4 mb-4 text-center">
+						<img class="imgArt" src="{{asset('images/PP/sunset.JPG')}}" alt="" style="width:140px; height:140px">
+					</div>
+
+					<div class="col-md-4 mb-4 text-center">
+						<img class="imgArt" src="{{asset('images/PP/smile.JPG')}}" alt="" style="width:140px; height:140px">
+					</div>
+
+					<div class="col-md-4 mb-4 text-center">
+						<img class="imgArt" src="{{asset('images/PP/sisters.JPG')}}" alt="" style="width:140px; height:140px">
+					</div>
+				</div>
+			</div>
+
+
+			{#### Card Musique ########}
+
+			<div class="parole flex-column p-4 mt-5">
+				<div>
+					<h3 class="ms-4 my-2 text-center">Chansons 🎧 :</h3>
+				</div>
+				<div class="d-flex flex-wrap justify-content-center">
+					{% for item in produits %}
+						{% if item.IdCategorie.id == '1' %}
+							<div class="card m-3" style="max-width: 25rem; height: 13rem">
+								<div class="card-body">
+									<h5 class="card-title">{{ item.titre }}</h5>
+									<p class="card-text fst-italic">Artiste :
+										{{ item.description }}</p>
+									<p class="card-text">Format :
+										{{ item.IdCategorie.nom }}</p>
+									<div class="text-center">
+										<audio controls controlslist="nodownload" style="max-width: 20rem;">
+											<source src="{{ asset('audio/' ~ item.fichier) }}" type="audio/mp3">
+											Votre navigateur ne supporte pas la lecture de ce fichier audio.
+										</audio>
+									</div>
+
+								</div>
+							</div>
+						{% endif %}
+					{% endfor %}
+				</div>
+			</div>
+
+
+			{#### fin Card ########}
+
+			{#### Card Instrumentals ########}
+
+			<div class="parole flex-column p-4 mt-5">
+				<div>
+					<h3 class="ms-4 my-2 text-center">Instrumentals 🎙️ :</h3>
+				</div>
+				<div class="d-flex flex-wrap justify-content-center">
+					{% for item in produits %}
+						{% if item.IdCategorie.id == '14' %}
+							<div class="card m-3" style="max-width: 25rem;">
+								<div class="card-body">
+									<h5 class="card-title">{{ item.titre }}</h5>
+									<p class="card-text fst-italic">Artiste :
+										{{ item.description }}</p>
+									<p class="card-text">Format :
+										{{ item.IdCategorie.nom }}</p>
+
+									<div class="text-center">
+										<audio controls controlslist="nodownload" style="max-width: 20rem;">
+											<source src="{{ asset('audio/' ~ item.fichier) }}" type="audio/mp3">
+											Votre navigateur ne supporte pas la lecture de ce fichier audio.
+										</audio>
+									</div>
+
+									<p class="card-text fw-bold">{{ item.prix }}
+										euros.</p>
+									<div class="text-center mt-3">
+										{% if app.user %}
+											<a id="btnPayer" href="{{ path('post_cart', { 'id': item.id }) }}" class="btn btn-dark">Ajouter au panier</a>
+										{% else %}
+											<a id="btnPayer" href="{{ path('app_login') }}" class="btn btn-dark">Se connecter pour ajouter au panier</a>
+										{% endif %}
+									</div>
+
+								</div>
+							</div>
+						{% endif %}
+					{% endfor %}
+				</div>
+			</div>
+
+
+			{#### fin Card ########}
+
+
+			{#### Card Paroles ########}
+
+
+			<div class="parole flex-column p-4 mb-4 mt-4">
+				<div>
+					<h3 class="ms-4 my-2 text-center mb-4">Paroles 🎤 :</h3>
+				</div>
+				<div class="d-flex flex-wrap justify-content-start">
+					{% for item in produits %}
+						{% if item.IdCategorie.id == '2' %}
+							<div class="card mb-3" style="max-width: 540px; width: 30rem;">
+								<div class="row g-0">
+									<div class="col-md-4">
+										<img src="{{ asset('images/' ~ item.fichier) }}" class="img-fluid rounded-start" alt="...">
+									</div>
+									<div class="col-md-8">
+										<div class="card-body">
+											<h5 class="card-title">{{ item.titre }}</h5>
+											<p class="card-text fst-italic">Artiste :
+												{{ item.description }}</p>
+											<p class="card-text fw-bold">{{ item.prix }}
+												euros.</p>
+											<div class="text-center mt-3">
+												{% if app.user %}
+													<a id="btnPayer" href="{{ path('post_cart', { 'id': item.id }) }}" class="btn btn-dark">Ajouter au panier</a>
+												{% else %}
+													<a id="btnPayer" href="{{ path('app_login') }}" class="btn btn-dark">Se connecter pour ajouter au panier</a>
+												{% endif %}
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						{% endif %}
+					{% endfor %}
+				</div>
+			</div>
+		{% endblock %}

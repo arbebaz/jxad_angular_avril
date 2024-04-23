@@ -1,0 +1,34 @@
+<div class="bordure-violette">
+  <p>liste-employes works!</p>
+  <ul
+    *ngFor="
+      let employe of listeEmployes;
+      let index = index;
+      let isFirst = first;
+      let isOdd = odd;
+      let isLast = last;
+      let isEven = even
+    "
+    [ngStyle]="{ color: isFirst ? 'purple' : '' }"
+    [ngClass]="{blue: isLast}"
+  >
+    <ng-container *ngIf="isFirst; else autreTemplate">
+      <li *ngIf="isFirst">Premier employé</li>
+      <li>Nom : {{ employe.nom }}</li>
+
+      <li>Prénom : {{ employe.prenom }}</li>
+
+      <li>Fonction : {{ employe.fonction }}</li>
+    </ng-container>
+
+    <ng-template #autreTemplate>
+      <li>Employé {{ index + 1 }}</li>
+
+      <li>Nom : {{ employe.nom }}</li>
+
+      <li>Prénom : {{ employe.prenom }}</li>
+
+      <li>Fonction : {{ employe.fonction }}</li>
+    </ng-template>
+  </ul>
+</div>
