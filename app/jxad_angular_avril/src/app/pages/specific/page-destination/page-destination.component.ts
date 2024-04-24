@@ -5,14 +5,13 @@ import { RouterLink } from '@angular/router';
 @Component({
   selector: 'app-page-destination',
   standalone: true,
-  imports: [
-    TopnavComponent,
-    RouterLink
-  ],
+  imports: [TopnavComponent, RouterLink],
   templateUrl: './page-destination.component.html',
-  styleUrl: './page-destination.component.css'
+  styleUrl: './page-destination.component.css',
 })
 export class PageDestinationComponent {
+  public page: string = 'page';
 
-  public page:string  = "page";
+  public id: number = 5;
+  public role: string = 'user';
 }

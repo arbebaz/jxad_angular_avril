@@ -86,12 +86,25 @@
   </div>
 
   <div class="mb-5">
-    <p>[routerLink]="['destination/sublevel1/sublevel2']"</p>
+    <p>
+      [routerLink]="['/', 'destination', 'sublevel1', 'sublevel2', 'sublevel3',
+      id, role]"
+    </p>
     <a
       href="#"
       class="btn btn-info"
-      [routerLink]="['/', 'destination', 'sublevel1', 'sublevel2']"
-      >Vers 'Destination/sublevel1/sublevel2'</a
+      [routerLink]="[
+        '/',
+        'destination',
+        'sublevel1',
+        'sublevel2',
+        'sublevel3',
+        id,
+        role
+      ]"
+      >Vers 'Destination/sublevel1/sublevel2/sublevel3/:id/:role'</a
     >
   </div>
+<!--Probléme dans l'url-->
+
 </main>

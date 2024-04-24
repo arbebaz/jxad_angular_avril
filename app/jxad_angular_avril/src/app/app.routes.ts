@@ -67,6 +67,10 @@ export const routes: Routes = [
     path: 'page-destination/sublevel1/sublevel2/sublevel3-bis',
     component: PageDestinationComponent,
   },
+  {
+    path: 'destination/sublevel1/sublevel2/sublevel3/:id/:role',
+    component: PageDestinationComponent,
+  },
 
   { path: '***', component: NotFoundComponent },
 ];
