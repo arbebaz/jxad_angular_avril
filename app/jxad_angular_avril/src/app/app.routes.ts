@@ -15,6 +15,7 @@ import { ContactComponent } from './pages/general/contact/contact.component';
 import { AboutComponent } from './pages/general/about/about.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { PageNavigationComponent } from './pages/specific/page-navigation/page-navigation.component';
+import { PageDestinationComponent } from './pages/specific/page-destination/page-destination.component';
 
 export const routes: Routes = [
   { path: '', component: AccueilComponent },
@@ -47,6 +48,25 @@ export const routes: Routes = [
   { path: 'about', component: AboutComponent },
 
   { path: 'page-navigation', component: PageNavigationComponent },
+
+  { path: 'page-destination', component: PageDestinationComponent },
+  { path: 'page-destination/sublevel1', component: PageDestinationComponent },
+  {
+    path: 'page-destination/sublevel1/sublevel2',
+    component: PageDestinationComponent,
+  },
+  {
+    path: 'page-destination/sublevel1/sublevel2-bis',
+    component: PageDestinationComponent,
+  },
+  {
+    path: 'page-destination/sublevel1/sublevel2/sublevel3',
+    component: PageDestinationComponent,
+  },
+  {
+    path: 'page-destination/sublevel1/sublevel2/sublevel3-bis',
+    component: PageDestinationComponent,
+  },
 
   { path: '***', component: NotFoundComponent },
 ];
