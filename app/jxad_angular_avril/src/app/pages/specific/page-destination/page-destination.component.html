@@ -1,10 +1,97 @@
 <header>
   <app-topnav [pageName]="page" />
 </header>
-
 <main>
-  <a href="#" class="btn btn-secondary" [routerLink]="['/page-navigation']"
-    >Retour à la page Navigation</a
-  >
+  <div class="mb-5 p-3" style="border: 1px solid red">
+    <a href="#" class="btn btn-secondary" [routerLink]="['/page-navigation']"
+      >Retour à la page Navigation</a
+    >
+  </div>
+
+  <p>page-destination works!</p>
+
+  <div class="mb-5">
+    <p>Navigation relative de destination vers Sublevel1</p>
+    <p>[routerLink]="['./sublevel1']"</p>
+    <a href="#" class="btn btn-success" [routerLink]="['./sublevel1']"
+      >Vers Sublevel1</a
+    >
+  </div>
+
+  <div class="mb-5">
+    <p>Navigation relative de Sublevel1 vers Sublevel2</p>
+    <p>[routerLink]="['./sublevel2']"</p>
+    <a href="#" class="btn btn-success" [routerLink]="['./sublevel2']"
+      >Vers Sublevel2</a
+    >
+  </div>
+
+  <div class="mb-5">
+    <p>Navigation relative de Sublevel2 vers Sublevel1</p>
+    <p>[routerLink]="['../']"</p>
+    <a href="#" class="btn btn-warning" [routerLink]="['../']"
+      >Vers Sublevel1</a
+    >
+  </div>
+
+  <div class="mb-5">
+    <p>Navigation relative de Sublevel1 vers Sublevel2</p>
+    <p>[routerLink]="['./sublevel2']"</p>
+    <a href="#" class="btn btn-success" [routerLink]="['./sublevel2']"
+      >Vers Sublevel2</a
+    >
+  </div>
+
+  <div class="mb-5">
+    <p>Navigation relative de Sublevel2 vers Sublevel2-bis</p>
+    <p>[routerLink]="['../sublevel2-bis']"</p>
+    <a href="#" class="btn btn-warning" [routerLink]="['../sublevel2-bis']"
+      >Vers Sublevel2-bis</a
+    >
+  </div>
+
+  <div class="mb-5">
+    <p>Navigation relative de Sublevel2-bis vers Sublevel3</p>
+    <p>[routerLink]="['../sublevel2/sublevel3']"</p>
+    <a
+      href="#"
+      class="btn btn-success"
+      [routerLink]="['../sublevel2/sublevel3']"
+      >Vers Sublevel3</a
+    >
+  </div>
+
+  <div class="mb-5">
+    <p>Navigation relative de Sublevel3 vers Sublevel3-bis</p>
+    <p>[routerLink]="['../sublevel3']"</p>
+    <a href="#" class="btn btn-warning" [routerLink]="['../sublevel3-bis']"
+      >Vers Sublevel3-bis</a
+    >
+  </div>
+
+  <div class="mb-5">
+    <p>Navigation relative de Sublevel2 vers Sublevel2-bis</p>
+    <p>[routerLink]="['../../sublevel2-bis']"</p>
+    <a href="#" class="btn btn-warning" [routerLink]="['../../sublevel2-bis']"
+      >Vers Sublevel2-bis</a
+    >
+  </div>
+
+  <div class="mb-5">
+    <p>Navigation relative de Sublevel2-bis vers destination</p>
+    <p>[routerLink]="['../../']"</p>
+    <a href="#" class="btn btn-warning" [routerLink]="['../../']"
+      >Vers Sublevel2-bis</a
+    >
+  </div>
+
+  <div class="mb-5">
+    <p>[routerLink]="['destination/sublevel1/sublevel2']"</p>
+    <a
+      href="#"
+      class="btn btn-info"
+      [routerLink]="['/', 'destination', 'sublevel1', 'sublevel2']"
+      >Vers 'Destination/sublevel1/sublevel2'</a
+    >
+  </div>
 </main>
-<p>page-destination works!</p>
